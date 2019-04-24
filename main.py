@@ -16,7 +16,7 @@ def webhook():
     req = request.get_json(silent=True, force=True)
     if req['queryResult']['intent']['displayName'] == 'Greeting':
         
-        if req['queryResult']['parameters']['animal'] == '小貓':
+        if req['queryResult']['parameters']['Cat'] == '小貓':
             return jsonify({"fulfillmentText":" 我們一起學貓叫~ 喵喵! 你好"})
         else :
             return jsonify({"fulfillmentText":" 哈囉 請問你想找哪隻動物 目前在線的可愛動物有 小豬 小狗 小貓"})
@@ -27,7 +27,7 @@ def webhook():
             number = req['queryResult']['parameters']['number'] + req['queryResult']['parameters']['number1']
             
                 
-            if req['queryResult']['parameters']['animal'] == '小貓':
+            if req['queryResult']['parameters']['Cat'] == '小貓':
                 if number <= 20:
                     ans = "喵!" * int(number)
                     return jsonify({"fulfillmentText":"{}。喵了{}次，我要罐罐~".format(ans, int(number))})
