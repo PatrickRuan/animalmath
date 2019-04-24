@@ -1,2 +1,2 @@
-runtime: python36
+runtime: python37
 service : default
