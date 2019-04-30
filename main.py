@@ -17,7 +17,7 @@ def webhook():
     if req['queryResult']['intent']['displayName'] == 'Greeting':
         
         if req['queryResult']['parameters']['cat'] == 'cat':
-            return jsonify({"fulfillmentText":" 我們一起學貓叫~ 喵喵! 你好"})
+            return jsonify({"fulfillmentText":" 我們一起學貓鬼叫~ 喵喵喵!"})
         else :
             return jsonify({"fulfillmentText":" 哈囉 請問你想找哪隻動物 目前在線的可愛動物有 小豬 小狗 小貓"})
             
