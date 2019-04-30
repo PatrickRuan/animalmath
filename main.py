@@ -16,29 +16,29 @@ def webhook():
     req = request.get_json(silent=True, force=True)
     if req['queryResult']['intent']['displayName'] == 'Greeting':
         
-        if req['queryResult']['parameters']['Cat'] == '小貓':
+        if req['queryResult']['parameters']['cat'] == 'cat':
             return jsonify({"fulfillmentText":" 我們一起學貓叫~ 喵喵! 你好"})
         else :
             return jsonify({"fulfillmentText":" 哈囉 請問你想找哪隻動物 目前在線的可愛動物有 小豬 小狗 小貓"})
             
-    if req['queryResult']['intent']['displayName'] == 'ask math':
+    if req['queryResult']['intent']['displayName'] == 'math':
         
         if req['queryResult']['parameters']['operator'] == "+" :
             number = req['queryResult']['parameters']['number'] + req['queryResult']['parameters']['number1']
             
                 
-            if req['queryResult']['parameters']['Cat'] == '小貓':
+            if req['queryResult']['parameters']['cat'] == 'cat':
                 if number <= 20:
                     ans = "喵!" * int(number)
                     return jsonify({"fulfillmentText":"{}。喵了{}次，我要罐罐~".format(ans, int(number))})
                 elif number >20:
-                    return jsonify({"fulfillmentText":"喵!喵!喵! 大膽奴才，竟然要我喵{}次。".format(int(number))})
+                    return jsonify({"fulfillmentText":"喵!喵!喵! 我要喵{}次，很累ㄟ。".format(int(number))})
             else:
-                return jsonify({"fulfillmentText":"你請教的動物不對歐"})
+                return jsonify({"fulfillmentText":"你不找咪咪嗎"})
             
         
     else:
-        return jsonify({"fulfillmentText":"你請教的動物不對歐"})
+        return jsonify({"fulfillmentText":"你不找咪咪嗎?"})
     
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080, threaded=True)
