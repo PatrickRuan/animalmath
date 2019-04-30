@@ -27,14 +27,14 @@ def webhook():
             number = req['queryResult']['parameters']['number'] + req['queryResult']['parameters']['number1']
             
                 
-            if req['queryResult']['parameters']['cat'] == 'cat':
-                if number <= 20:
-                    ans = "喵!" * int(number)
-                    return jsonify({"fulfillmentText":"{}。喵了{}次，我要罐罐~".format(ans, int(number))})
-                elif number >20:
-                    return jsonify({"fulfillmentText":"喵!喵!喵! 我要喵{}次，很累ㄟ。".format(int(number))})
-            else:
-                return jsonify({"fulfillmentText":"你不找咪咪嗎"})
+            #if req['queryResult']['parameters']['cat'] == 'cat':
+            if number <= 20:
+                ans = "喵!" * int(number)
+                return jsonify({"fulfillmentText":"{}。喵了{}次，我要罐罐~".format(ans, int(number))})
+            elif number >20:
+                return jsonify({"fulfillmentText":"喵!喵!喵! 我要喵{}次，很累ㄟ。".format(int(number))})
+            #else:
+            #    return jsonify({"fulfillmentText":"你不找咪咪嗎"})
             
         
     else:
