@@ -23,7 +23,7 @@ def webhook():
             
     if req['queryResult']['intent']['displayName'] == 'math':
         
-        if req['queryResult']['parameters']['operator'] == "+" :
+        if req['queryResult']['parameters']['add'] == "+" :
             number = req['queryResult']['parameters']['number'] + req['queryResult']['parameters']['number1']
             
                 
