@@ -16,14 +16,14 @@ def webhook():
     req = request.get_json(silent=True, force=True)
     if req['queryResult']['intent']['displayName'] == 'Greeting':
         
-        if req['queryResult']['parameters']['cat'] == 'cat':
+        if req['queryResult']['parameters']['animal'] == 'cat':
             return jsonify({"fulfillmentText":" 我們一起學貓鬼叫~ 喵喵喵!"})
         else :
             return jsonify({"fulfillmentText":" 哈囉 請問你想找哪隻動物 目前在線的可愛動物有 小豬 小狗 小貓"})
             
     if req['queryResult']['intent']['displayName'] == 'math':
         
-        if req['queryResult']['parameters']['add'] == "+" :
+        if req['queryResult']['parameters']['operator'] == "+" :
             number = req['queryResult']['parameters']['number'] + req['queryResult']['parameters']['number1']
             
                 
